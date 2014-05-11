@@ -8,11 +8,13 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,7 +45,15 @@ public class WebViewActivity extends Activity {
 		WebSettings settings = webView.getSettings();
 		settings.setDefaultTextEncodingName("utf-8");
 		
-		String customHtml = "<html><head></head><body><p>Lade Inhalt...</p></body></html>";
+		
+		//TODO move to helper
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		int fontColor = sharedPref.getInt(SettingsActivity.KEY_ARTICLE_FONT_COLOR, 0x352B1900);
+		int backgroundColor = sharedPref.getInt(SettingsActivity.KEY_ARTICLE_BACKGROUND_COLOR, 0xFFFFEF00);
+		String fontColorHex = String.format("#%06X", (0xFFFFFF & fontColor));
+		String backgroundColorHex = String.format("#%06X", (0xFFFFFF & backgroundColor));
+		
+		String customHtml = "<html><head></head><body style=\"background-color: "+backgroundColorHex+"; color: "+fontColorHex+";\"><p>Lade Inhalt...</p></body></html>";
 		webView.loadData(customHtml, "text/html", "UTF-8");
 	}
 	
@@ -115,7 +125,13 @@ public class WebViewActivity extends Activity {
 
 		protected void loadArticleHtmlIntoWebView(Article article) throws IllegalArgumentException, MalformedURLException, IOException {
 			Log.d("ArticleDownloadTask", "articlePageUrl: " + article.getLink());
-			articleWithHtml = WozChArticlePageParser.parseArticlePage(article);
+//			articleWithHtml = WozChArticlePageParser.parseRawArticleHtml(article);
+			
+			String rawArticleHtml = WozChArticlePageParser.parseRawArticleHtml(article);
+			article.setContentHtml(rawArticleHtml);
+			
+			articleWithHtml = article;
+			
 //			Log.d("ArticleDownloadTask", articleWithHtml.getContentHtml());
 
 			WebViewActivity.this.runOnUiThread(new Runnable() {
@@ -123,7 +139,7 @@ public class WebViewActivity extends Activity {
 					WebView webView = (WebView) findViewById(R.id.webView1);
 					Log.d("webview article loader", articleWithHtml.getTitle());
 					webView.loadDataWithBaseURL(null,
-							articleWithHtml.getContentHtml(), "text/html",
+							articleWithHtml.getArticleWebpage(getApplicationContext()), "text/html",
 							"UTF-8", null);
 				}
 			});

@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:picker="http://schemas.android.com/apk/res/afzkl.development.colorpickerview.demo" >
+
+    <PreferenceCategory android:title="@string/pref_article_group_title" >
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/pref_article_fontsize_dialogtitle"
+            android:entries="@array/fontSizeListNames"
+            android:entryValues="@array/fontSizeListValues"
+            android:key="pref_article_font_size"
+            android:title="@string/pref_article_fontsize_title" 
+            android:summary="@string/pref_article_fontsize_summary" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF352B19"
+            android:key="pref_article_color"
+            android:summary="@string/pref_article_fontcolor_summary"
+            android:title="@string/pref_article_fontcolor_title" />
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFFFFFFEF"
+            android:key="pref_article_background_color"
+            android:summary="@string/pref_article_bgcolor_summary"
+            android:title="@string/pref_article_bgcolor_title" />
+        <ch.wozapp.DefaultSettingsDialogPreference
+        	android:title="@string/pref_article_default_title"
+        	android:summary="@string/pref_article_default_summary"
+        	android:dialogMessage="@string/pref_article_default_dialogmsg"/> 
+    </PreferenceCategory>
+
+</PreferenceScreen>

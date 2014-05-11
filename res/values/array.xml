@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="fontSizeListNames">
+		<item>Sehr klein</item>
+		<item>Kleiner</item>
+		<item>Klein</item>
+		<item>Normal</item>
+		<item>Groß</item>
+		<item>Größer</item>
+		<item>Sehr groß</item>
+	</string-array>
+	<string-array name="fontSizeListValues">
+	    <item>0.7</item>
+	    <item>0.8</item>
+	    <item>0.9</item>
+	    <item>1</item>
+   	    <item>1.1</item>
+	    <item>1.2</item>
+	    <item>1.3</item>
+	</string-array>
+</resources>

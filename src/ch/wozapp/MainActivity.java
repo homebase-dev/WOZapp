@@ -9,11 +9,15 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -90,10 +94,14 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
 			loadWozKulturArticlesListView();
 		}
 
-		if (item.getItemId() == R.id.action_drogen) {
-			loadWozDrogenArticlesListView();
+//		if (item.getItemId() == R.id.action_drogen) {
+//			loadWozDrogenArticlesListView();
+//		}
+		
+		if (item.getItemId() == R.id.action_settings) {
+			loadSettingsView();
 		}
-
+		
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -102,11 +110,11 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
 		refreshArticleListView(pageIndex);
 	}
 
-	private void loadWozDrogenArticlesListView() {
-		Toast.makeText(MainActivity.this, R.string.action_drogen_toast, Toast.LENGTH_SHORT).show();
-		pageIndex = WozChPageParser.WOZ_PAGE_DROGEN_INDEX;
-		refreshArticleListView(pageIndex);
-	}
+//	private void loadWozDrogenArticlesListView() {
+//		Toast.makeText(MainActivity.this, R.string.action_drogen_toast, Toast.LENGTH_SHORT).show();
+//		pageIndex = WozChPageParser.WOZ_PAGE_DROGEN_INDEX;
+//		refreshArticleListView(pageIndex);
+//	}
 
 	private void loadWozKulturArticlesListView() {
 		Toast.makeText(MainActivity.this, R.string.action_kultur_und_wissen_toast, Toast.LENGTH_SHORT).show();
@@ -137,7 +145,12 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
 		pageIndex = WozChPageParser.WOZ_PAGE_MAIN_INDEX;
 		refreshArticleListView(pageIndex);		
 	}
-
+	
+	private void loadSettingsView() {
+		Intent intent = new Intent(this, SettingsActivity.class);
+		startActivity(intent);
+	}
+	
 	private void refreshArticleListView(int pageIndex) {
     	
     	if(!isNetworkAvailable()) {
