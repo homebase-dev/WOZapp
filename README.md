@@ -6,9 +6,9 @@ WOZapp is an android app which allows mobile-optimized access to the woz.ch news
 
 ### How WOZapp works
 
-The app fetches, depending on the rubric, the woz.ch webpage HTML source code and parses out the list of articles. When one clicks on a article in the article list, the app goes to the article URL and fetches the content which is afterwards displayed in a WebView.
+The app fetches, depending on the user selected rubric, the woz.ch webpage HTML source code and parses out a list of articles. When one clicks on an article in the list, the app goes to the article URL and fetches the content which is afterwards displayed in an android WebView.
 
-WOZapp does not cache data at the moment, which means all the fetched HTML source code is not saved locally on the device.
+WOZapp does suppoer caching at the moment, which means all fetched HTML source code is not locally saved on the device.
 
 
 ### Playstore
