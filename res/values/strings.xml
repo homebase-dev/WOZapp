@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WOZapp</string>
+    
+    <string name="action_goto_src">⇪</string>
+    <string name="action_refresh">↻</string>
+    <string name="action_settings">Settings</string>
+   
+    <string name="action_about_wozapp">\?</string>
+	<string name="action_woz">WOZ</string>
+	<string name="action_woz_toast">Lade Rubrik WOZ</string>
+	<string name="action_schweiz">Schweiz</string>
+	<string name="action_schweiz_toast">Lade Rubrik Schweiz</string>
+	<string name="action_wirtschaft">Wirtschaft</string>
+	<string name="action_wirtschaft_toast">Lade Rubrik Wirtschaft</string>
+	<string name="action_international">International</string>
+	<string name="action_international_toast">Lade Rubrik International</string>
+	<string name="action_kultur_und_wissen">Kultur und Wissen</string>
+	<string name="action_kultur_und_wissen_toast">Lade Rubrik Kultur und Wissen</string>
+	<string name="action_drogen">Drogen-Dossier</string>
+	<string name="action_drogen_toast">Lade Rubrik Drogen</string>
+    
+	<string name="action_goto_woz_link">⇪</string>
+	
+	<string name="msg_not_online">Nicht online</string>
+	<string name="msg_refreshing_page">Reloading&#8230;</string>
+  	
+  	<string name="about_title">Über WOZapp</string>
+ 	<string name="about_p1">Version 1.0.0 | homebase.dev@gmail.com</string>
+ 	<string name="about_p2">Inoffizielle www.woz.ch App</string>
+  	<string name="about_p3">Für die kleine Sonne</string>
+  	<string name="about_content_desc_about_img">Bild einer strahlenden Sonne</string>
+  	
+  	<string name="toast_goto_webpage">Gehe zu woz.ch</string>
+  	
+  	<string name="no_connectivity_article_title">Internetverbindung benötigt</string>
+  	<string name="no_connectivity_article_subtitle">Aktiviere Internet und drücke ↻</string>
+  	
+	<string name="list_single_default_title"></string>
+  	<string name="list_single_default_subtitle"></string>
+  	<string name="list_single_default_summary"></string>
+</resources>

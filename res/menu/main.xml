@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_goto_woz_src"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_goto_src"/>
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_refresh"/>    
+    <item
+        android:id="@+id/action_about_wozapp"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_about_wozapp"/>
+    
+    <item
+        android:id="@+id/action_woz"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_woz"/>
+    <item
+        android:id="@+id/action_schweiz"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_schweiz"/>
+    <item
+        android:id="@+id/action_wirtschaft"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_wirtschaft"/>
+    <item
+        android:id="@+id/action_international"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_international"/>
+    <item
+        android:id="@+id/action_kultur_und_wissen"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_kultur_und_wissen"/>
+    <item
+        android:id="@+id/action_drogen"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_drogen"/>
+
+</menu>
